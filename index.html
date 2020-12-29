@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <!-- *********************************************************************************************** HEAD START -->
+  
+    <meta charset="UTF-8"> <!-- primul lucru din head! -->
+    <meta name="author" content="Pop-Vișan Cristina">
+    <meta name="application-name" content="FantasyTasteRestaurant">
+    <meta name="description" content="Fantasy Taste Restaurant Web Page">
+    <meta name="keywords" content="restaurant, meniu, mancare, bar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- dimensiunea se ajusteaza in functie de device -->
+    
+    <title>Fantasy Taste Restaurant</title> <!-- dupa toate meta-urile! -->
+    
+    <!-- CSS (introduction) de pe Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+    <!-- SEPARATE (introduction) de pe Bootstrap (se poate si BUNDLE in loc de SEPARATE) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" integrity="sha512-f8mUMCRNrJxPBDzPJx3n+Y5TC5xp6SmStstEfgsDXZJTcxBakoB5hvPLhAfJKa9rCvH+n3xpJ2vQByxLk4WP2g==" crossorigin="anonymous" />
+   
+    <style> /* ------------------------------------------------------------------------------------------- STYLE START */
+        
+        /* de EVITAT pe cat posibil WIDTH cand lucrezi cu BOOTSTRAP, dispare atributul responsive!!! */
+        
+        .img-carusel {
+            width: 100%; /* FOARTE IMPORTANT, altfel imaginile caruselului nu se intind dintr-un capat in celalat */ 
+            margin: auto;
+        }
+        
+        .navbar {
+            background-color: #31112c;
+        }
+        
+        .navbar a {
+            color: #f2a07b;
+        }
+        
+        .navbar a:hover {
+            color: #fbdcc4;
+        }
+        
+        .column1 a {
+            text-decoration: none;
+            font-family: poppins, sans-serif;  
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: #31112c;
+        }
+        
+        .column1 a:hover {
+            color: #fbdcc4;
+        }
+        
+        li {
+            margin: 10px; /* distanta intre elementele listei */
+        }
+        
+        .column2 a {
+            text-decoration: none;
+            font-family: sacramento, cursive;
+            font-size: 40px; 
+            font-weight: bold;
+            color: #31112c;
+        }
+        
+        .column3 {
+            font-family: poppins, sans-serif;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: #31112c;
+        }
+        
+        span {
+            color: #fbdcc4;
+        }
+        
+        .footer-copyright {
+            font-family: poppins, sans-serif;
+            background-color: #31112c;
+            color: #7d0633;
+        }
+        
+        h1 {
+            font-family: sacramento, cursive;
+            font-weight: bold;
+            color: #7d0633;
+            text-shadow: 15px 15px 17px black;
+            font-size: 80px; /* daca pun vw in loc de px => TEXT RESPONSIVE yeeey */
+            margin-bottom: 20px;
+            /*
+            position: absolute; /* de aici in jos daca doresc sa afisez titlul peste corusel *
+            top: 20%;
+            left: 5%;
+            z-index: 1;
+            */
+        }
+        
+        a { 
+            text-decoration: none; /* nu subliniaza link-ul */
+            color:inherit; /* lasa culoarea textului specificata in alte elemente, nu o schimba */
+        }
+        
+        a:hover { 
+            text-decoration: none; /* nu subliniaza link-ul */
+            color:inherit; /* lasa culoarea textului specificata in alte elemente, nu o schimba */
+        }
+        
+        h2 {
+            font-family: sacramento, cursive;
+            color: #31112c;
+            text-shadow: 15px 15px 17px black;
+            font-size: 60px; 
+        }
+        
+        h3 {
+            font-family: sacramento, cursive;
+            color: #f2a07b;
+            text-shadow: 15px 15px 17px black;
+            font-size: 60px; 
+        }
+        
+        h4 {
+            font-family: poppins, sans-serif;
+            font-size: 25px;
+            color: #fbdcc4;
+        }
+        
+        h5 {
+            font-family: poppins, sans-serif;
+            font-size: 25px;
+            color: #31112c;
+        }
+        
+        .background-mov {
+            background-color: #31112c;
+        }
+        
+        .background-roz {
+            background-color: #7d0633;
+        }
+        
+        .background-crem {
+            background-color: #f2a07b;
+        }
+        
+        .descriere {
+            font-family: poppins, sans-serif;
+            letter-spacing: 2px;
+            font-size: 15px;
+            color: #7d0633;
+            font-weight: bold;
+        }
+        
+        .map {
+            box-shadow: 15px 15px 17px black;
+        }
+        
+        .intro {
+            background-color: rgba(255,255,255,0.4);
+            left: 15%;
+            right: 15%;
+            color: #7d0633;
+            font-size: 18px;
+            font-family: poppins, sans-serif;
+            text-align: left; 
+            /*
+            position: absolute; /* afisez peste corusel *
+            top: 40%;
+            z-index: 1;
+            */
+        }
+        
+        .transparent {
+            background-color: rgba(255,255,255,0.4);
+        }
+        
+        .transparent p {
+            font-family: poppins, sans-serif;
+            font-size: 15px;
+            color: #7d0633;
+        }
+        
+        .tabel_rezervare {
+            border-radius: 10px;
+            background-color: #31112c;
+            display: inline-block;
+            box-shadow: 15px 15px 17px black;
+            width: 90%;
+        }
+        
+        input[type=text], input[type=email1], input[type=tel], input[type=number], input[type=date], input[type=time] {
+            width: 40%;
+            border: 2px solid #7d0633;
+            border-radius: 6px;
+            background-color: #fff2df;
+            color: #3e4444;
+            font-family: poppins, sans-serif;
+        }
+        
+        input[type=email2] {
+            width: 81%;
+            border: 2px solid #7d0633;
+            border-radius: 6px;
+            background-color: #fff2df;
+            color: #3e4444;
+            font-family: poppins, sans-serif;
+        }
+        
+        .detalii {
+            width: 81%;
+            border: 2px solid #7d0633;
+            border-radius: 6px;
+            background-color: #fff2df;
+            color: #3e4444;
+            resize: none;
+            outline: none;
+            font-family: poppins, sans-serif;
+        }
+        
+        input[type=submit] {
+            width: 81%;
+            background-color: #7d0633;
+            color: #fbdcc4;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: poppins, sans-serif;
+            font-size: 17px;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #f2a07b;
+            color: #3e4444;
+        }
+        
+        .rezervare_img {
+            box-shadow: 15px 15px 17px black;
+            border: 10px solid #7d0633;
+            border-radius: 6px;
+            width: 75%;
+        }
+        
+        .card {
+            /*width: 660px;*/
+            background-color: #7d0633;
+            color: #fbdcc4;
+            font-family: poppins, sans-serif;
+            font-size: 15px;
+            box-shadow: 15px 15px 17px black;
+        }
+        
+        .zoom:hover {
+            transform: scale(1.3); 
+            transition: transform .2s; 
+        }
+        
+        /* pentru vertical alignment => vertical justification (de la Flavia)
+        /*
+        .row {
+          display: flex;
+        }
+        
+        .columnmax {
+          flex: 70%;
+          padding: 5px;
+        }
+        
+        .columnmin {
+          flex: 30%;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+        }
+        */
+        
+        .burger {
+            max-width: 50px;
+        }
+        
+    </style> <!------------------------------------------------------------------------------------------- STYLE STOP -->
+    
+</head> <!-- *********************************************************************************************** HEAD END -->
+
+
+
+<body> <!-- *********************************************************************************************** BODY START -->
+
+    <div class=""> <!-- am scos container-fluid -->
+        
+        <nav id="acasa" class="navbar navbar-expand-md navbar-dark"> <!-- daca sterg navbar-dark nu mai apare hamburgerul, ciudat -->
+            <a href="#acasa" class="navbar-brand"><img src="hamburger.png" class="burger" alt="Hamburger icon"></a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                <span class="navbar-toggler-icon"></span> <!-- asta face sa apara meniul tip hamburger cand se miceste ecranul -->    
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbar"> <!-- collapse navbar-collapse face sa dispara meniul si sa apara doar hamburger-ul -->
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#acasa" class="nav-link">ACASĂ</a></li>
+                    <li class="nav-item"><a href="#meniu" class="nav-link">MENIU</a></li>
+                    <li class="nav-item"><a href="#rezervare" class="nav-link">REZERVARE</a></li>
+                    <li class="nav-item"><a href="#recenzii" class="nav-link">RECENZII</a></li>
+                    <li class="nav-item"><a href="#galerie" class="nav-link">GALERIE</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav> <!-- pana aici avem doar bara de navigare -->
+        
+        <header id="header" class="background-mov pb-5">
+           
+            <h1 class="text-center"><a href="index.html">Fantasy Taste Restaurant</a></h1> 
+            
+            <!-- de aici incepe caruselul de imagini -->
+            
+            <div id="carusel" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#carusel" data-slide-to="0" class="active"></li> <!-- acesta e activ cand intram pe pagina -->
+                    <li data-target="#carusel" data-slide-to="1"></li>
+                    <li data-target="#carusel" data-slide-to="2"></li>
+                    <li data-target="#carusel" data-slide-to="3"></li>
+                    <li data-target="#carusel" data-slide-to="4"></li>
+                    <li data-target="#carusel" data-slide-to="5"></li>
+                </ul>
+                
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="carousel1.jpg" alt="slide web" class="img-fluid img-carusel"></div>
+                    <div class="carousel-item"><img src="carousel2.jpg" alt="slide web" class="img-fluid img-carusel"></div>
+                    <div class="carousel-item"><img src="carousel3.jpg" alt="slide web" class="img-fluid img-carusel"></div>
+                    <div class="carousel-item"><img src="carousel4.jpg" alt="slide web" class="img-fluid img-carusel"></div>
+                    <div class="carousel-item"><img src="carousel5.jpg" alt="slide web" class="img-fluid img-carusel"></div>
+                    <div class="carousel-item"><img src="carousel6.jpg" alt="slide web" class="img-fluid img-carusel"></div>
+                </div>
+                
+                <!-- butoanele de inainte si inapoi din stanga si dreapta fotografiei -->
+                
+                <a class="carousel-control-prev" href="#carusel" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+                <a class="carousel-control-next" href="#carusel" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+            </div>
+            
+            <div class="ml-5 mr-5">
+                <div class="intro mt-5 pt-3 pb-2">
+                    <p class="ml-5 mr-5">Porțile restaurantului <b>Fantasy Taste</b> s-au deschis din dorința de <b>diversitate</b>, așadar în meniul nostru se găsesc preparate cu specific italian, american, românesc și nu numai.</p>
+                    <p class="ml-5 mr-5">Dacă îți dorești să ai parte de o atmosferă plăcută și relaxantă, Fantasy Taste Resurant este alegerea potrvită!</p>
+                    <p class="ml-5 mr-5">Meniul nostru cuprinde o multitudine de preparate care sunt servite cu promptitudine de către un personal amabil.</p>
+                    <p class="ml-5 mr-5">Restaurantul nostru se află în Cluj-Napoca pe <b>Aleea Răsăritului nr. 17</b>.</p>
+                    <p class="ml-5 mr-5">Te așteptăm și îți promitem că nu te vom dezamăgi!</p>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="background-crem pl-5 pr-5">
+                <h2 class="background-crem text-center pt-3 pb-3">Specialitătile noastre</h2>  
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12 pb-5">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <img class="card-img" src="specialitate1.jpg" title="Un sandwich special așa cum doar la noi găsești!" alt="Sandwich Fantasy Taste">
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="card-body text-left">
+                                        <h5 class="card-title">Sandwich Fantasy Taste</h5>
+                                        <p class="card-text">Sandwich-ul Fantasy Taste preparat după o rețetă specială este servit alături de o porție de cartofi prăjiți. Alegerea perfectă pentru momentele în care nu știi ce să alegi din meniul nostru!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-12 col-sm-12 pb-5">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <img class="card-img" src="specialitate2.jpg" title="Cel mai bun burrito din oraș!" alt="Buritto mexican cu pui">
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="card-body text-left">
+                                        <h5 class="card-title">Buritto mexican cu pui</h5>
+                                        <p class="card-text">Dacă te-ai plictisit de mâncarea cu specific italienesc sau de burgerii americani este timpul să încerci un buritto mexican cu pui și legume special alese! Cu siguranță nu vei regreta, o spunem din experiență!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="background-mov pb-5 pl-5 pr-5">
+                <h3 class="text-center pt-3 pb-3">Bar</h3>
+                
+                <div class="intro pt-3 pb-2">
+                    <p class="ml-5 mr-5">Barul <b>Fantasy Taste Bar</b> se află în incinta clădirii restaurantului.</p>
+                    <p class="ml-5 mr-5">Vă așteptăm cu o gamă largă de băuturi alcoolice și răcoritoare și vă invităm să încercați <b>cocktailurile special preparate</b> de barmanul nostru.</p>
+                    <p class="ml-5 mr-5">Vinuri, răcoritoare, cafea, cocktailuri, toate acestea se regăsesc în meniul nostru.</p>
+                    <p class="ml-5 mr-5">În cazul aniversărilor invitații primesc câte un shot <b>din partea casei</b>.</p>
+                </div>
+            </div>
+            
+            <div id="recenzii" class="background-crem pb-5 pl-5 pr-5">
+                <h2 class="text-center pt-3 pb-3">Recenzii</h2>
+                
+                <section class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch"> <!-- d-flex align-items-stretch ca sa faca toate cardurile egale -->
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="mike_green.jpg" title="" alt="Mike Green, persoana care a scris prima recenzie">
+                            <div class="card-body text-left">
+                                <h5 class="card-title">Mike Green</h5>
+                                <p class="card-text">Personal foarte amabil, servire promptă și mâncare excelentă.<br>Unul dintre cele mai bune restaurante la care am mâncat!</p>
+                            </div>
+                        </div>
+                    </div>  
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="kylie_kristen.jpg" title="" alt="Kylie Kristen, persoana care a scris a doua recenzie">
+                            <div class="card-body text-left">
+                                <h5 class="card-title">Kylie Kristen</h5>
+                                <p class="card-text">Mâncare și atmosferă excelentă, prețuri rezonabile.<br>Specialitățile restaurantului sunt nemaipomenite, însă și celelalte preparate merită încercate.<br>Recomand cu încredere!</p>
+                            </div>
+                        </div>
+                    </div>  
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="richard_blue.jpg" title="" alt="Richard Blue, persoana care a scris a treia recenzie">
+                            <div class="card-body text-left">
+                                <h5 class="card-title">Richard Blue</h5>
+                                <p class="card-text">Atmosferă autentică.<br>Servesc cel mai bun cheesecake, iar prețurile sunt decente.<br>Cu siguranță voi reveni.</p>
+                            </div>
+                        </div>
+                    </div>  
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="elvin_harding.jpg" title="" alt="Elvin Harding, persoana care a scris a patra recenzie">
+                            <div class="card-body text-left">
+                                <h5 class="card-title">Elvin Harding</h5>
+                                <p class="card-text">Unul dintre cele mai bune restaurante la care am mâncat!<br>Mâncare și atmosferă excelentă, prețuri rezonabile.<br>Personal foarte amabil, servire promptă și mâncare excelentă.</p>
+                            </div>
+                        </div>
+                    </div>  
+                </section>
+            </div>
+            
+            <div id="meniu" class="background-mov pb-5 pl-5 pr-5">
+                <h3 class="text-center pt-3 pb-3">Meniu</h3>
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-right">
+                        <div class="transparent pt-3 pr-5 pb-3 mb-4">
+                            <h4>Paste</h4>
+                            <p>Tagliatelle cu creveți si dovlecel (350 G) ....................... <span>30,00 LEI</span></p>
+                            <p>Gnocchi quattro formaggi (400 G) ....................... <span>23,00 LEI</span></p>
+                            <p>Linguine cu fructe de mare (350 G) ....................... <span>25,00 LEI</span></p>
+                            <p>Tagliatelle cu somon fume (400 G) ....................... <span>35,00 LEI</span></p>
+                            <p>Penne carbonara (400 G) ....................... <span>20,00 LEI</span></p>
+                            <p>Penne arabiata (400 G) ....................... <span>18,00 LEI</span></p>
+                            <p>Penne Contadina (400 G) ....................... <span>20,00 LEI</span></p>
+                        </div>
+                        
+                        <div class="transparent pt-3 pr-5 pb-3 mb-4">
+                            <h4>Pizza</h4>
+                            <p>Pizza quattro formaggi (650 G) ....................... <span>28,00 LEI</span><p>
+                            <p>Pizza Capriciosa (600 G) ....................... <span>25,00 LEI</span></p>
+                            <p>Pizza quattro stagioni (700 G) ....................... <span>25,00 LEI</span></p>
+                            <p>Pizza marinara (620 G) ....................... <span>28,00 LEI</span></p>
+                            <p>Pizza frutti di mare (650 G) ....................... <span>28,00 LEI</span></p>
+                            <p>Pizza "Fantasy Taste" (600 G) ....................... <span>28,00 LEI</span></p>
+                            <p>Pizza Diavola (600 G) ....................... <span>25,00 LEI</span></p>
+                        </div>
+                        
+                        <div class="transparent pt-3 pr-5 pb-3 mb-4">
+                            <h4>Doar la noi găsești</h4>
+                            <p>Pizza "Fantasy Taste" (600 G) ....................... <span>28,00 LEI</span></p>
+                            <p>Salată "Fantasy Taste" (350 G) ....................... <span>32,00 LEI</span></p>
+                            <p>Desert "Fantasy Taste" (150 G) ....................... <span>15,00 LEI</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-right">  
+                        <div class="transparent pt-3 pr-5 pb-3 mb-4">
+                            <h4>Specialități</h4>
+                            <p>Șalău de Nil (500 G) ....................... <span>45,00 LEI</span></p>
+                            <p>Biban de mare în crustă de sare (400 G) ....................... <span>25,00 LEI</span></p>
+                            <p>Păstrăv la grătar cu sos de roșii si măsline (100 G) ....................... <span>25,00 LEI</span></p>
+                            <p>Dorada în frunză de bananier (400 G) ....................... <span>45,00 LEI</span></p>
+                            <p>Somon la gratar cu piure de cartofi dulci (400 G) ....................... <span>42,00 LEI</span></p>
+                            <p>Fish and chips în crustă de bere (400 G) ....................... <span>30,00 LEI</span></p>
+                            <p>Tartar de vită (300 G) ....................... <span>40,00 LEI</span></p>
+                            <p>Tagliata de vită cu cartofi la cuptor (350 G) ....................... <span>40,00 LEI</span></p>
+                        </div>
+                        
+                        <div class="transparent pt-3 pr-5 pb-3 mb-4">
+                            <h4>Salate</h4>
+                            <p>Salată cu creveți si baby spanac (250 G) ....................... <span>32,00 LEI</span></p>
+                            <p>Salată "Fantasy Taste" (350 G) ....................... <span>32,00 LEI</span></p>
+                            <p>Salată Caesar (300 G) ....................... <span>25,00 LEI</span></p>
+                            <p>Salată Caprese (350 G) ....................... <span>26,00 LEI</span></p>
+                        </div>
+                        
+                        <div class="transparent pt-3 pr-5 pb-3 mb-4">
+                            <h4>Desert</h4>
+                            <p>Chocolate cake (150 G) ....................... <span>15,00 LEI</span></p>
+                            <p>Vanilla cake (150 G) ....................... <span>15,00 LEI</span></p>
+                            <p>Original cheesecake (150 G) ....................... <span>16,00 LEI</span></p>
+                            <p>Tiramisu (200 G) ....................... <span>14,00 LEI</span></p>
+                            <p>Lava cake (200 G) ....................... <span>18,00 LEI</span></p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            
+            <div id="rezervare" class="background-crem pb-5 pl-5 pr-5">
+                <h2 class="text-center pt-3 pb-3">Rezervare</h2>
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-center pb-5">
+                        <img class="rezervare_img" src="meal.jpg" title="Nu o sa regreti ca ai ales sa mananci la noi!" alt="Persoane care servesc masa">
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                        <div class="tabel_rezervare pt-4 pb-4 mb-4">
+                            <form action=""> <!-- form colecteaza datele introduse de utilizator -->
+                                <!-- <label for="nume">Nume</label> -->
+                                <input class="p-2 mt-2 mb-2" type="text" placeholder="Nume"> 
+                                <!-- <label for="telefon">Telefon</label> -->
+                                <input class="p-2 mt-2 mb-2" type="tel" placeholder="Telefon"><br> 
+                                <!-- <label for="email">e-mail</label> -->
+                                <input class="p-2 mt-2 mb-2" type="email1" placeholder="e-mail"> 
+                                <!-- <label for="numar_persoane">Numar de persoane</label> -->
+                                <input class="p-2 mt-2 mb-2" type="number" placeholder="Număr persoane"><br>
+                                <!-- <label for="data">Data</label> -->
+                                <input class="p-2 mt-2 mb-2" type="date" placeholder="Data">
+                                <!-- <label for="ora">Ora</label> -->
+                                <input class="p-2 mt-2 mb-2" type="time" placeholder="Ora" min="09:00" max="20:00"><br>
+                                <!-- <label for="detalii">Detalii</label> -->
+                                <textarea class="detalii p-2 m-2" placeholder="Detalii"></textarea><br>
+                                <input class="p-3 m-2" type="submit" value="Trimite rezervarea!">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="galerie" class="background-mov pb-5 pl-5 pr-5">
+                <h3 class="text-center pt-3 pb-3">Galerie</h3>
+                
+                <!-- aici nu mai trebuie div diferit la fiecare linie cu 4 imagini deoarece lucrez cu BOOTSTRAP si le aranjeaza el frumos -->
+                
+                <div class="row container-fluid text-center background-mov"> <!-- am scos container-fluid, ba nu-->
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="fish1.jpg" title="Păstrăv în mălai" alt="Păstrăv în mălai">
+                        <div class="text-center pt-2 descriere"><p>Păstrăv în mălai</p></div>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="pizza.jpg" title="Pizza Capriciosa" alt="Pizza Capriciosa">
+                        <div class="text-center pt-2 descriere"><p>Pizza Capriciosa</p></div>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="fish2.jpg" title="Somon la grătar" alt="Somon la grătar">
+                        <div class="text-center pt-2 descriere"><p>Somon la grătar</p></div>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="cake1.jpg" title="Chocolate cake" alt="Chocolate cake">
+                        <div class="text-center pt-2 descriere"><p>Chocolate cake</p></div>
+                    </figure>
+                    
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="drinks.jpg" title="Băuturi" alt="Băuturi">
+                        <div class="text-center pt-2 descriere"><p>Băuturi</p></div>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="cake2.jpg" title="Vanilla cake" alt="Vanilla cake">
+                        <div class="text-center pt-2 descriere"><p>Vanilla cake</p></div>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="pasta.jpg" title="Paste Bolognese" alt="Paste Bolognese">
+                        <div class="text-center pt-2 descriere"><p>Paste Bolognese</p></div>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="cake3.jpg" title="Original cheesecake" alt="Original cheesecake">
+                        <div class="text-center pt-2 descriere"><p>Original cheesecake</p></div>
+                    </figure>
+                    
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="barbecue.jpg" title="Ceafă de porc la grătar" alt="Ceafă de porc la grătar">
+                        <div class="text-center pt-2 descriere"><p>Ceafă de porc la grătar</p></div>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="soup.jpg" title="Supă de legume" alt="Supă de legume">
+                        <div class="text-center pt-2 descriere"><p>Supă de legume</p></div>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="salad.jpg" title="Salata Caesar" alt="Salata Caesar">
+                        <div class="text-center pt-2 descriere"><p>Salata Caesar</p></div>
+                    </figure>
+                    <figure class="col-lg-3 col-md-4 col-sm-6 col-xs-12 zoom">
+                        <img src="cake4.jpg" title="Lava cake" alt="Lava cake">
+                        <div class="text-center pt-2 descriere"><p>Lava cake</p></div>
+                    </figure>
+                </div>
+            </div>
+            
+            <div id="contact" class="background-crem pb-5 pl-5 pr-5">
+                <h2 class="text-center pt-3 pb-3">Contact</h2>
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                        <div class="tabel_rezervare pt-4 pb-4">
+                            <form action=""> <!-- form colecteaza datele introduse de utilizator -->
+                                <input class="p-2 mt-2 mb-2" type="text" placeholder="Nume">
+                                <input class="p-2 mt-2 mb-2" type="tel" placeholder="Telefon">  
+                                <input class="p-2 m-2" type="email2" placeholder="e-mail"><br> 
+                                <textarea class="detalii p-2 m-2" placeholder="Mesaj"></textarea><br>
+                                <input class="p-3 m-2" type="submit" value="Contactează-ne!">
+                            </form>
+                        </div>
+                        
+                        <div class="buttons pt-5">
+                            <a href="https://www.facebook.com/" target="_blank" class="btn btn-social-icon btn-facebook m-1 ml-3 mb-3"><span class="fa fa-facebook"></span></a> <!-- target="_black" => new tab -->
+                            <a href="https://twitter.com/" target="_blank" class="btn btn-social-icon btn-twitter m-1 mb-3"><span class="fa fa-twitter"></span></a>
+                            <a href="https://www.instagram.com/" target="_blank" class="btn btn-social-icon btn-instagram m-1 mb-3"><span class="fa fa-instagram"></span></a>
+                            <a href="https://ro.pinterest.com/" target="_blank" class="btn btn-social-icon btn-pinterest m-1 mb-3"><span class="fa fa-pinterest"></span></a>
+                        </div>
+                    </div>  
+                    
+                    <div class="column3 col-lg-6 col-md-12 col-sm-12 text-center">
+                        <p><br>Telefon: <span>0746 XXX XXX</span></p>
+                        <p>e-mail: <span>fantasytaste@restaurant.com</span></p>
+                        <p>Adresă: <span>Cluj-Napoca, Aleea Răsăritului 17</span></p>
+                        <iframe class="map mb-4 text-center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.660320162091!2d23.588020515002096!3d46.77159155327756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490e9dbd3f0461%3A0xf72bf616b3ba8cb4!2sStrada%20Regele%20Ferdinand%204%2C%20Cluj-Napoca%20400000!5e0!3m2!1sro!2sro!4v1603485496205!5m2!1sro!2sro" frameborder="0"></iframe>
+                    </div>  
+                </div>
+            </div>
+        </main>
+        
+        <footer id="footer" class="page-footer">
+            <div class="footer-copyright text-center py-2">
+                <p>Copyright &copy; 2020 Fantasy Taste Restaurant | Toate drepturile rezervate</p>
+            </div>
+            
+            <div class="container-fluid text-center">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 column1 background-roz">
+                        <ul class="list-unstyled">
+                            <li><a href="#acasa">ACASĂ</a></li>
+                            <li><a href="#meniu">MENIU</a></li>
+                            <li><a href="#rezervare">REZERVARE</a></li>
+                            <li><a href="#recenzii">RECENZII</a></li>
+                            <li><a href="#galerie">GALERIE</a></li>
+                            <li><a href="#contact">CONTACT</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-12 column2 background-roz">
+                        <a href="index.html">Fantasy Taste<br>Restaurant</a>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-12 column3 background-roz">
+                        <p>CONTACT</p>
+                        <p><br>Telefon:<br><span>0746 XXX XXX</span></p>
+                        <p>e-mail:<br><span>fantasytaste@restaurant.com</span></p>
+                        <p>Adresă:<br><span>Cluj-Napoca, Aleea Răsăritului 17</span></p>
+                    </div>
+                </div>
+            </div>
+        </footer> 
+    </div>
+    
+</body> <!-- *********************************************************************************************** BODY STOP -->
+
+</html>
